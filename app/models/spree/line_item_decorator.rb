@@ -19,7 +19,7 @@ Spree::LineItem.class_eval do
     end
 
     def quantity_updated_to_non_zero_value?
-      saved_changes.include?(:quantity) && !saved_change_to_quantity.first.nil? && quantity != 0
+      changed_attributes.include?(:quantity) && !quantity_changed.first.nil? && quantity != 0
     end
 
     def set_data
