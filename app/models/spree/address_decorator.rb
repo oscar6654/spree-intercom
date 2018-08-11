@@ -17,7 +17,7 @@ Spree::Address.class_eval do
     end
 
     def user_intercom_attributes_changed?
-      [:phone, :firstname, :lastname].any? { |attribute| saved_changes.include?(attribute) }
+      [:phone, :firstname, :lastname].any? { |attribute| changed_attributes.include?(attribute) }
     end
 
 end
