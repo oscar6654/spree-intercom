@@ -18,7 +18,7 @@ Spree::User.class_eval do
     end
 
     def user_intercom_attributes_changed?
-      [:email, :last_sign_in_ip].any? { |attribute| saved_changes.include?(attribute) }
+      [:email, :last_sign_in_ip].any? { |attribute| changed_attributes.include?(attribute) }
     end
 
 end
